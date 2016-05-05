@@ -16,7 +16,7 @@
 */
 
 
-#include <iosteam>
+#include <iostream>
 #include <ctime>
 #include <vector>
 #include <algorithm>
@@ -46,12 +46,12 @@ public:
    }
 };
 
-class ShuffledInsertonExpt : public Timeable{
+class ShuffledInsertExpt : public Timeable{
 private:
    int treeSize;
    FHBST<int> aTree;
 public:
-   ShuffledInsertonExpt(int nElements, int nTimes) :
+   ShuffledInsertExpt(int nElements, int nTimes) :
       treeSize(nElements), Timeable(nTimes)
    {
       vector<int> aVec;
@@ -63,7 +63,7 @@ public:
       for (int i=0; i<nElements; i++)
          aTree.insert(aVec[i]);
    }
-   ~ ShuffledInsertonExpt() { aTree.clear(); }
+   ~ ShuffledInsertExpt() { aTree.clear(); }
    void operator() ()
    {
       srand(time(NULL));
@@ -83,8 +83,8 @@ int main(int argc, const char * argv[])
       if (i >= 3500)
          int n = 0;
       
-      SeqInsertionExpt seqExp(i, numTime);
-      ShuffledInsertonExpt shuffledExp(i, numTime);
+      SeqInsertExpt seqExp(i, numTime);
+      ShuffledInsertExpt shuffledExp(i, numTime);
       
       cout << i << ", "
            << Timeable::timeit(&seqExp)
