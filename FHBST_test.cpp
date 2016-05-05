@@ -21,6 +21,7 @@
 #include <vector>
 #include <algorithm>
 #include <cstdlib>
+#include <string>
 #include "FHBST.h"
 #include "Timeable.h"
 
@@ -34,7 +35,7 @@ public:
    SeqInsertExpt(int nElements, int nTimes) :
       treeSize(nElements), Timeable(nTimes)
    {
-      for (i=0; i<nElements; i++)
+      for (int i=0; i<nElements; i++)
          aTree.insert(i);
    }
    ~ SeqInsertExpt() { aTree.clear(); }
@@ -87,9 +88,9 @@ int main(int argc, const char * argv[])
       ShuffledInsertExpt shuffledExp(i, numTime);
       
       cout << i << ", "
-           << Timeable::timeit(&seqExp)
+           << Timeable::timeit(&seqExp, numTime)
            << ", "
-           << Timeable::timeit(&shuffledExp)
+           << Timeable::timeit(&shuffledExp, numTime)
            << endl;
    }
    

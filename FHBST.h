@@ -21,6 +21,10 @@ public:
     
     FHNode *left, *right;
     T data;
+   
+protected:
+   virtual bool setHeight() {}
+   virtual int getHeight() {return 0;}
 };
 
 // ---------------------- FHBST Prototype --------------------------
