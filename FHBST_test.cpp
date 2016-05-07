@@ -22,10 +22,15 @@
 #include <algorithm>
 #include <cstdlib>
 #include <string>
+#include <cstring>
+
 #include "FHBST.h"
 #include "Timeable.h"
 
-using namespace std;
+using std::string;
+using std::vector;
+using std::cout;
+using std::endl;
 
 class SeqInsertExpt : public Timeable {
 private:

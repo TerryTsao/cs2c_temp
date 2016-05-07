@@ -10,6 +10,10 @@
 #define FHBST_h
 
 #include <sstream>
+using std::string;
+
+
+
 
 // --------------------- FHNode Prototype -------------------------
 template <class T>
