@@ -19,6 +19,10 @@ int main ()
    for(int i=1; i<15; i++)
       newTree.insert(i);
    
-   newTree.preorder_traversal();
-   newTree.postorder_traversal();
+   PrintNode<int> intPrinter;
+   newTree.preorder_traversal(intPrinter);
+   newTree.postorder_traversal(intPrinter);
+   cout << endl;
+   
+   return 0;
 }
