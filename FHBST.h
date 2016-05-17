@@ -191,7 +191,8 @@ void FHBST<T>::makeEmpty(FHNode<T>* &node) {
 
 
 
-template <class Processor>
+// template <class Processor>
+template <class T>
 void FHBST<T>::preorder_traversal(FHNode<T> *node, Processor func){
    if(node == NULL)
       return;
@@ -201,7 +202,8 @@ void FHBST<T>::preorder_traversal(FHNode<T> *node, Processor func){
    preorder_traversal(node->right);
 }
 
-template<class Processor>
+//template<class Processor>
+template <class T>
 void FHBST<T>::inorder_traversal(FHNode<T> *node, Processor func) {
    if(node == NULL)
       return;
@@ -212,7 +214,8 @@ void FHBST<T>::inorder_traversal(FHNode<T> *node, Processor func) {
 }
 
 
-template <class Processor>
+// template <class Processor>
+template <class T>
 void FHBST<T>::postorder_traversal(FHNode<T> *node, Processor func) {
    if(node == NULL) return;
    
@@ -223,13 +226,13 @@ void FHBST<T>::postorder_traversal(FHNode<T> *node, Processor func) {
 
 #endif /* FHBST_h */
 
-// void preorder_traversal (Processor func) { preorder_traversal(mRoot, func); }
-
-template <class Processor>
+template <class T>
 class PrintNode
 {
+public:
    void operator() (FHNode<T> *node)
    {
-      cout << node->data;
+      std::cout << node->data << " ";
+      std::cout << std::endl;
    }
-}
+};
