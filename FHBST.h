@@ -189,7 +189,8 @@ void FHBST<T>::makeEmpty(FHNode<T>* &node) {
 
 
 
-template <class T, class Processor>
+template <class T>
+template <class Processor>
 void FHBST<T>::preorder_traversal(FHNode<T> * &node, Processor func) {
    if(node == NULL) return;
    func(node);
@@ -197,7 +198,7 @@ void FHBST<T>::preorder_traversal(FHNode<T> * &node, Processor func) {
    preorder_traversal(node->right, func);
 }
 
-//template <class T, class Processor>
+template <class T>
 template <class Processor>
 void FHBST<T>::inorder_traversal(FHNode<T> * &node, Processor func) {
    if(node == NULL) return;
@@ -207,7 +208,8 @@ void FHBST<T>::inorder_traversal(FHNode<T> * &node, Processor func) {
    inorder_traversal(node->right, func);
 }
 
-template <class T, class Processor>
+template <class T>
+template <class Processor>
 void FHBST<T>::postorder_traversal(FHNode<T> * &node, Processor func) {
    if(node == NULL) return;
    
